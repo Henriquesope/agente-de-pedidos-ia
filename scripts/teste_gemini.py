@@ -6,7 +6,7 @@ import sys
 from dotenv import load_dotenv
 from google import genai
 
-MODELO = "gemini-2.5-flash"
+MODELO = "gemini-3.6-flash"
 
 
 def main() -> None:

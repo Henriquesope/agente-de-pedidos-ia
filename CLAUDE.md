@@ -17,7 +17,7 @@ Preciso conseguir explicar cada decisão do projeto. Então:
 
 ## Stack
 - Python 3.12, FastAPI, Pydantic, python-dotenv
-- LLM: Google Gemini via SDK `google-genai` (`from google import genai`), modelo `gemini-2.5-flash` (free tier). **Não** usar o pacote antigo `google-generativeai`.
+- LLM: Google Gemini via SDK `google-genai` (`from google import genai`), modelo `gemini-3.6-flash` (free tier). O `gemini-2.5-flash` está bloqueado para contas novas (404) e o `gemini-3.8-flash` dava 503 por alta demanda em 02/11/2026. **Não** usar o pacote antigo `google-generativeai`.
 - Chave em `.env` como `GEMINI_API_KEY`. O `.env` nunca vai para o Git.
 - Front (última etapa): React + Vite + Tailwind (SPA, sem Next.js), chat simples com carrinho ao lado, consumindo a API via `fetch`. URL da API em variável de ambiente (`VITE_API_URL`); habilitar CORS no FastAPI para a origem do front.
 - Deploy: back no Render, front na Vercel.
