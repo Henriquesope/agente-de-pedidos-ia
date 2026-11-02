@@ -24,7 +24,7 @@ Preciso conseguir explicar cada decisão do projeto. Então:
 
 ## Estrutura planejada
 ```
-data/restaurantes.json   # 6–8 restaurantes fictícios, ~60 itens (um deles é o Restaurante Glória)
+data/restaurantes.json   # 6–8 restaurantes fictícios, ~60 itens
 app/
   tools.py               # funções que o modelo pode chamar
   agent.py               # loop do agente (manual)

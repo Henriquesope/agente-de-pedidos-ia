@@ -1,6 +1,6 @@
 {
   "restaurantes": [
-    {"id": "gloria", "nome": "Restaurante Glória", "categoria": "Brasileira caseira", "tempo_entrega_min": 40, "taxa_entrega": 5.99},
+    {"id": "panela", "nome": "Panela de Barro", "categoria": "Brasileira caseira", "tempo_entrega_min": 40, "taxa_entrega": 5.99},
     {"id": "hana", "nome": "Hana Sushi", "categoria": "Japonesa", "tempo_entrega_min": 50, "taxa_entrega": 8.99},
     {"id": "horta", "nome": "Horta Verde", "categoria": "Saudável", "tempo_entrega_min": 30, "taxa_entrega": 4.99},
     {"id": "forno", "nome": "Forno da Vila", "categoria": "Pizzaria", "tempo_entrega_min": 45, "taxa_entrega": 6.99},
@@ -9,16 +9,16 @@
     {"id": "atelie", "nome": "Doce Ateliê", "categoria": "Doces e café", "tempo_entrega_min": 25, "taxa_entrega": 0.0}
   ],
   "itens": [
-    {"id": "gloria-01", "restaurante_id": "gloria", "nome": "Feijoada completa", "descricao": "Feijoada com arroz, couve refogada, farofa de mandioca e laranja.", "preco": 42.90, "tags": ["sem_lactose", "sem_gluten"]},
-    {"id": "gloria-02", "restaurante_id": "gloria", "nome": "PF de frango grelhado", "descricao": "Filé de frango grelhado com arroz, feijão e salada de alface e tomate.", "preco": 29.90, "tags": ["leve", "sem_lactose", "sem_gluten"]},
-    {"id": "gloria-03", "restaurante_id": "gloria", "nome": "Bife acebolado com fritas", "descricao": "Bife de alcatra acebolado com arroz, feijão e batata frita.", "preco": 36.90, "tags": ["sem_lactose", "sem_gluten"]},
-    {"id": "gloria-04", "restaurante_id": "gloria", "nome": "Strogonoff de frango", "descricao": "Strogonoff de frango com creme de leite, arroz branco e batata palha.", "preco": 32.90, "tags": []},
-    {"id": "gloria-05", "restaurante_id": "gloria", "nome": "Moqueca de peixe", "descricao": "Peixe branco cozido no leite de coco com pimentões, arroz e pirão.", "preco": 48.90, "tags": ["sem_lactose", "sem_gluten"]},
-    {"id": "gloria-06", "restaurante_id": "gloria", "nome": "Escondidinho de carne seca", "descricao": "Purê de mandioca com manteiga e queijo gratinado, recheado de carne seca.", "preco": 38.90, "tags": ["sem_gluten"]},
-    {"id": "gloria-07", "restaurante_id": "gloria", "nome": "Sopa de legumes", "descricao": "Caldo de legumes da estação com macarrão de letrinhas.", "preco": 19.90, "tags": ["leve", "vegetariano", "vegano", "sem_lactose"]},
-    {"id": "gloria-08", "restaurante_id": "gloria", "nome": "Pudim de leite", "descricao": "Pudim de leite condensado com calda de caramelo.", "preco": 12.90, "tags": ["vegetariano", "sem_gluten", "doce"]},
-    {"id": "gloria-09", "restaurante_id": "gloria", "nome": "Suco de laranja natural", "descricao": "Suco de laranja espremido na hora, 400 ml.", "preco": 9.90, "tags": ["vegetariano", "vegano", "sem_lactose", "sem_gluten", "bebida"]},
-    {"id": "gloria-10", "restaurante_id": "gloria", "nome": "Guaraná lata", "descricao": "Refrigerante de guaraná, 350 ml.", "preco": 6.50, "tags": ["vegetariano", "vegano", "sem_lactose", "sem_gluten", "bebida"]},
+    {"id": "panela-01", "restaurante_id": "panela", "nome": "Feijoada completa", "descricao": "Feijoada com arroz, couve refogada, farofa de mandioca e laranja.", "preco": 42.90, "tags": ["sem_lactose", "sem_gluten"]},
+    {"id": "panela-02", "restaurante_id": "panela", "nome": "PF de frango grelhado", "descricao": "Filé de frango grelhado com arroz, feijão e salada de alface e tomate.", "preco": 29.90, "tags": ["leve", "sem_lactose", "sem_gluten"]},
+    {"id": "panela-03", "restaurante_id": "panela", "nome": "Bife acebolado com fritas", "descricao": "Bife de alcatra acebolado com arroz, feijão e batata frita.", "preco": 36.90, "tags": ["sem_lactose", "sem_gluten"]},
+    {"id": "panela-04", "restaurante_id": "panela", "nome": "Strogonoff de frango", "descricao": "Strogonoff de frango com creme de leite, arroz branco e batata palha.", "preco": 32.90, "tags": []},
+    {"id": "panela-05", "restaurante_id": "panela", "nome": "Moqueca de peixe", "descricao": "Peixe branco cozido no leite de coco com pimentões, arroz e pirão.", "preco": 48.90, "tags": ["sem_lactose", "sem_gluten"]},
+    {"id": "panela-06", "restaurante_id": "panela", "nome": "Escondidinho de carne seca", "descricao": "Purê de mandioca com manteiga e queijo gratinado, recheado de carne seca.", "preco": 38.90, "tags": ["sem_gluten"]},
+    {"id": "panela-07", "restaurante_id": "panela", "nome": "Sopa de legumes", "descricao": "Caldo de legumes da estação com macarrão de letrinhas.", "preco": 19.90, "tags": ["leve", "vegetariano", "vegano", "sem_lactose"]},
+    {"id": "panela-08", "restaurante_id": "panela", "nome": "Pudim de leite", "descricao": "Pudim de leite condensado com calda de caramelo.", "preco": 12.90, "tags": ["vegetariano", "sem_gluten", "doce"]},
+    {"id": "panela-09", "restaurante_id": "panela", "nome": "Suco de laranja natural", "descricao": "Suco de laranja espremido na hora, 400 ml.", "preco": 9.90, "tags": ["vegetariano", "vegano", "sem_lactose", "sem_gluten", "bebida"]},
+    {"id": "panela-10", "restaurante_id": "panela", "nome": "Guaraná lata", "descricao": "Refrigerante de guaraná, 350 ml.", "preco": 6.50, "tags": ["vegetariano", "vegano", "sem_lactose", "sem_gluten", "bebida"]},
 
     {"id": "hana-01", "restaurante_id": "hana", "nome": "Combinado 20 peças", "descricao": "Sushis e sashimis variados de salmão e peixe branco, acompanha shoyu.", "preco": 79.90, "tags": ["sem_lactose"]},
     {"id": "hana-02", "restaurante_id": "hana", "nome": "Poke de salmão", "descricao": "Arroz de sushi, salmão em cubos, pepino, manga, edamame, gergelim e molho cítrico de limão.", "preco": 38.90, "tags": ["leve", "sem_lactose", "sem_gluten"]},
