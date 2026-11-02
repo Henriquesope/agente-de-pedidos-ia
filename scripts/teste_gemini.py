@@ -13,7 +13,7 @@ def main() -> None:
     load_dotenv()
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        sys.exit("GEMINI_API_KEY não encontrada. Copie .env.example para .env e coloque sua chave.")
+        sys.exit("GEMINI_API_KEY não encontrada. Crie um arquivo .env com GEMINI_API_KEY=sua_chave.")
 
     client = genai.Client(api_key=api_key)
     resposta = client.models.generate_content(model=MODELO, contents="oi")
