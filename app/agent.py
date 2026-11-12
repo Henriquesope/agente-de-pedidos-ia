@@ -11,12 +11,11 @@ Quem executa é este arquivo. A chamada automática de funções do SDK fica des
 """
 
 import os
-import time
 from typing import Any
 
 from dotenv import load_dotenv
 from google import genai
-from google.genai import errors, types
+from google.genai import types
 
 from app import tools
 from app.prompts import SYSTEM_PROMPT
@@ -24,7 +23,6 @@ from app.session import Carrinho, Sessao
 
 MODELO = "gemini-3.6-flash"
 MAX_PASSOS = 8  # trava de segurança: evita loop infinito de tool calls
-ESPERA_429_SEGUNDOS = 20  # free tier: ~10 requisições por minuto
 
 CONFIG = types.GenerateContentConfig(
     system_instruction=SYSTEM_PROMPT,
@@ -49,15 +47,13 @@ def _obter_client() -> genai.Client:
 
 
 def _chamar_modelo(historico: list[types.Content]) -> types.GenerateContentResponse:
-    """Uma chamada ao Gemini; se bater no limite do free tier (429), espera e tenta mais uma vez."""
+    """Uma chamada ao Gemini.
+
+    Se a API falhar (por exemplo 429, limite do free tier), o erro sobe direto:
+    a API HTTP devolve 502 na hora e o script de evals decide se espera e tenta de novo.
+    """
     client = _obter_client()
-    try:
-        return client.models.generate_content(model=MODELO, contents=historico, config=CONFIG)
-    except errors.ClientError as erro:
-        if erro.code != 429:
-            raise
-        time.sleep(ESPERA_429_SEGUNDOS)
-        return client.models.generate_content(model=MODELO, contents=historico, config=CONFIG)
+    return client.models.generate_content(model=MODELO, contents=historico, config=CONFIG)
 
 
 def executar_tool(nome: str, args: dict[str, Any], carrinho: Carrinho) -> dict[str, Any]:
