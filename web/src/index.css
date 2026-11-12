@@ -1,1 +1,78 @@
+@import "@fontsource-variable/figtree";
 @import "tailwindcss";
+
+/* Tokens do design: cada cor vira uma classe do Tailwind (bg-fundo, text-tinta, bg-marca...). */
+@theme {
+  --font-sans: "Figtree Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* Neutros levemente quentes, para combinar com o vermelho. */
+  --color-fundo: oklch(0.975 0.006 60);
+  --color-painel: oklch(1 0 0);
+  --color-linha: oklch(0.9 0.008 60);
+  --color-tinta: oklch(0.22 0.02 40);
+  --color-tinta-suave: oklch(0.47 0.02 40);
+
+  /* Vermelho: usado só em ações e estados, nunca como enfeite. */
+  --color-marca: oklch(0.56 0.21 27);
+  --color-marca-forte: oklch(0.49 0.19 27);
+  --color-marca-suave: oklch(0.955 0.03 27);
+
+  /* Entrada das mensagens e pontinhos de "digitando". */
+  --animate-entrar: entrar 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-ponto: ponto 1.2s ease-in-out infinite;
+
+  @keyframes entrar {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+  }
+
+  @keyframes ponto {
+    0%, 60%, 100% {
+      opacity: 0.3;
+      transform: translateY(0);
+    }
+    30% {
+      opacity: 1;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scrollbar-color: var(--color-linha) transparent;
+  }
+
+  body {
+    background: var(--color-fundo);
+    color: var(--color-tinta);
+    caret-color: var(--color-marca);
+  }
+
+  ::selection {
+    background: var(--color-marca-suave);
+    color: var(--color-marca-forte);
+  }
+
+  /* Foco visível para quem navega pelo teclado. */
+  :focus-visible {
+    outline: 2px solid var(--color-marca);
+    outline-offset: 2px;
+  }
+
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* Quem pediu menos movimento no sistema não vê animações. */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
