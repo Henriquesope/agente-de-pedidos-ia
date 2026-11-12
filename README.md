@@ -8,6 +8,10 @@ Um agente conversacional que entende pedidos de comida em linguagem natural e mo
 
 Projeto de portfólio de engenharia com IA generativa. Os restaurantes e cardápios são fictícios.
 
+**Demo:** [agente-de-pedidos-ia.vercel.app](https://agente-de-pedidos-ia.vercel.app) · API em [agente-de-pedidos-api.onrender.com/docs](https://agente-de-pedidos-api.onrender.com/docs)
+
+> A demo roda em planos gratuitos: a primeira mensagem pode demorar cerca de um minuto (o servidor dorme sem uso) e o modelo tem um limite diário de requisições. Se aparecer o aviso de modelo indisponível, o limite do dia acabou.
+
 ## Arquitetura
 
 ```mermaid
@@ -146,7 +150,6 @@ O que foi validado até aqui: o checador acusa corretamente os tipos de falha qu
 - **Busca por palavras** não entende sinônimos ("refri", "japa"). Próximo passo: embeddings.
 - **Histórico cresce sem limite** dentro de uma sessão. Próximo passo: resumir ou truncar turnos antigos.
 - **Sem streaming:** a resposta chega de uma vez, depois de todas as tool calls.
-- **Espera em caso de limite:** quando o Gemini devolve 429, o agente espera 20 segundos antes de tentar de novo, e o usuário fica esperando junto.
 
 ## Como usei IA no desenvolvimento
 
