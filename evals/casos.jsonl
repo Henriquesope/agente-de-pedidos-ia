@@ -1,0 +1,31 @@
+{"id": "simples-01", "pedido": "quero uma feijoada", "deve_ter_itens": true, "itens_esperados": ["panela-01"]}
+{"id": "simples-02", "pedido": "me vê duas pizzas margherita grandes", "deve_ter_itens": true, "itens_esperados": ["forno-01"], "quantidade_total": 2}
+{"id": "simples-03", "pedido": "quero um poke de salmão e um chá verde gelado", "deve_ter_itens": true, "itens_esperados": ["hana-02", "hana-09"]}
+{"id": "simples-04", "pedido": "um burger clássico com batata frita e uma limonada", "deve_ter_itens": true, "itens_esperados": ["brasa-01", "brasa-06", "brasa-09"]}
+{"id": "simples-05", "pedido": "um cappuccino e uma fatia de torta de limão", "deve_ter_itens": true, "itens_esperados": ["atelie-08", "atelie-06"]}
+{"id": "orcamento-01", "pedido": "quero algo leve pro jantar, até R$40, sem lactose", "deve_ter_itens": true, "preco_max_total": 40, "tags_obrigatorias": ["leve", "sem_lactose"]}
+{"id": "orcamento-02", "pedido": "quero um almoço de até 30 reais já contando a entrega", "deve_ter_itens": true, "preco_max_total": 30}
+{"id": "orcamento-03", "pedido": "quero uma pizza gastando no máximo 35 reais no total", "deve_ter_itens": true, "preco_max_total": 35, "restaurante_esperado": "forno"}
+{"id": "orcamento-04", "pedido": "quero comida japonesa por até R$45 no total", "deve_ter_itens": true, "preco_max_total": 45, "restaurante_esperado": "hana"}
+{"id": "orcamento-05", "pedido": "um hambúrguer e uma bebida por até 55 reais com a entrega", "deve_ter_itens": true, "preco_max_total": 55, "restaurante_esperado": "brasa"}
+{"id": "orcamento-06", "pedido": "quero uma sobremesa de até 15 reais", "deve_ter_itens": true, "preco_max_total": 15, "tags_obrigatorias": ["doce"]}
+{"id": "orcamento-07", "pedido": "quero jantar pra duas pessoas gastando até R$80 no total", "deve_ter_itens": true, "preco_max_total": 80}
+{"id": "orcamento-08", "pedido": "algo leve e vegetariano por até 25 reais no total", "deve_ter_itens": true, "preco_max_total": 25, "tags_obrigatorias": ["leve", "vegetariano"]}
+{"id": "restricao-01", "pedido": "sou vegano, quero um lanche", "deve_ter_itens": true, "tags_obrigatorias": ["vegano"]}
+{"id": "restricao-02", "pedido": "quero uma pizza sem glúten", "deve_ter_itens": true, "tags_obrigatorias": ["sem_gluten"], "itens_esperados": ["forno-09"]}
+{"id": "restricao-03", "pedido": "quero algo vegetariano e picante", "deve_ter_itens": true, "tags_obrigatorias": ["vegetariano", "picante"]}
+{"id": "restricao-04", "pedido": "sou intolerante a lactose e celíaco, monta um jantar de até 45 reais pra mim", "deve_ter_itens": true, "preco_max_total": 45, "tags_obrigatorias": ["sem_lactose", "sem_gluten"]}
+{"id": "restricao-05", "pedido": "quero uma sobremesa vegana", "deve_ter_itens": true, "tags_obrigatorias": ["vegano", "doce"]}
+{"id": "restricao-06", "pedido": "comida mexicana sem lactose por até 40 reais no total", "deve_ter_itens": true, "preco_max_total": 40, "tags_obrigatorias": ["sem_lactose"], "restaurante_esperado": "cantina"}
+{"id": "restricao-07", "pedido": "quero um hambúrguer sem glúten", "deve_ter_itens": true, "tags_obrigatorias": ["sem_gluten"], "restaurante_esperado": "brasa"}
+{"id": "impossivel-01", "pedido": "quero um sushi vegano e sem glúten por até 10 reais no total", "deve_ter_itens": false}
+{"id": "impossivel-02", "pedido": "quero uma lasanha à bolonhesa", "deve_ter_itens": false}
+{"id": "impossivel-03", "pedido": "quero uma pizza que seja vegana e sem glúten ao mesmo tempo", "deve_ter_itens": false}
+{"id": "impossivel-04", "pedido": "quero o combinado de 20 peças de sushi, mas só tenho 50 reais", "deve_ter_itens": false}
+{"id": "impossivel-05", "pedido": "quero um açaí de 500 ml", "deve_ter_itens": false}
+{"id": "pergunta-01", "pedido": "quais restaurantes têm entrega grátis?", "deve_ter_itens": false}
+{"id": "conversa-01", "pedido": "quero uma pizza calabresa", "seguimentos": ["na verdade troca por um burger bacon duplo, pode remover a pizza"], "deve_ter_itens": true, "itens_esperados": ["brasa-02"], "restaurante_esperado": "brasa", "quantidade_total": 1}
+{"id": "conversa-02", "pedido": "quero um poke vegano de tofu", "seguimentos": ["adiciona mais um igual"], "deve_ter_itens": true, "itens_esperados": ["hana-03"], "quantidade_total": 2}
+{"id": "conversa-03", "pedido": "quero um burrito de carne e uma porção de churros", "seguimentos": ["tira os churros"], "deve_ter_itens": true, "itens_esperados": ["cantina-01"], "quantidade_total": 1}
+{"id": "conversa-04", "pedido": "quero tacos al pastor", "seguimentos": ["quanto ficou o total?"], "deve_ter_itens": true, "itens_esperados": ["cantina-04"], "quantidade_total": 1}
+{"id": "conversa-05", "pedido": "adiciona um brownie de chocolate", "seguimentos": ["adiciona também uma pizza portuguesa"], "deve_ter_itens": true, "itens_esperados": ["atelie-02"], "restaurante_esperado": "atelie"}
