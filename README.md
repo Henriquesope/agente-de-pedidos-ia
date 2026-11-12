@@ -148,6 +148,20 @@ O que foi validado até aqui: o checador acusa corretamente os tipos de falha qu
 - **Sem streaming:** a resposta chega de uma vez, depois de todas as tool calls.
 - **Espera em caso de limite:** quando o Gemini devolve 429, o agente espera 20 segundos antes de tentar de novo, e o usuário fica esperando junto.
 
+## Como usei IA no desenvolvimento
+
+Este projeto foi desenvolvido com o [Claude Code](https://claude.com/claude-code) como par de programação, e os commits registram isso na linha `Co-Authored-By`. Deixo explícito porque dirigir bem um assistente de código faz parte do trabalho de quem constrói software com IA.
+
+**O que eu defini** (está no [CLAUDE.md](CLAUDE.md), o arquivo de instruções que o assistente segue):
+
+- O escopo, a stack, as tools, as regras de negócio e o roteiro em etapas.
+- As restrições de engenharia: loop do agente escrito à mão, sem frameworks de agente e sem a chamada automática de funções do SDK.
+- A regra principal: nada entra no projeto sem que eu consiga explicar. Antes de cada parte não trivial o assistente explica o que vai fazer e por quê; ao fim de cada etapa, resume o que eu preciso saber defender.
+
+**O que o assistente fez:** escreveu o código dentro dessas regras, uma etapa por commit, e testou cada etapa antes de seguir.
+
+**Decisões que tomei no caminho:** trocar o front para TypeScript, seguir para o front quando a cota do Gemini travou os evals, pedir o redesenho da interface e manter o uso de IA visível no histórico.
+
 ## Deploy
 
 Back no Render, front na Vercel.
