@@ -19,7 +19,7 @@ Preciso conseguir explicar cada decisão do projeto. Então:
 - Python 3.12, FastAPI, Pydantic, python-dotenv
 - LLM: Google Gemini via SDK `google-genai` (`from google import genai`), modelo `gemini-3.6-flash` (free tier). O `gemini-2.5-flash` está bloqueado para contas novas (404) e o `gemini-3.8-flash` dava 503 por alta demanda em 02/11/2026. **Não** usar o pacote antigo `google-generativeai`.
 - Chave em `.env` como `GEMINI_API_KEY`. O `.env` nunca vai para o Git.
-- Front (última etapa): React + Vite + Tailwind (SPA, sem Next.js), chat simples com carrinho ao lado, consumindo a API via `fetch`. URL da API em variável de ambiente (`VITE_API_URL`); habilitar CORS no FastAPI para a origem do front.
+- Front (última etapa): React + TypeScript + Vite + Tailwind (SPA, sem Next.js), chat simples com carrinho ao lado, consumindo a API via `fetch`. URL da API em variável de ambiente (`VITE_API_URL`); habilitar CORS no FastAPI para a origem do front.
 - Deploy: back no Render, front na Vercel.
 
 ## Estrutura planejada
@@ -60,7 +60,7 @@ Regras de negócio:
 Cada caso em `casos.jsonl` tem o pedido e as expectativas verificáveis em código, por exemplo:
 `{"pedido": "...", "preco_max_total": 40, "tags_obrigatorias": ["sem_lactose"], "deve_ter_itens": true}`
 
-O `run_evals.py` roda cada caso numa sessão nova, checa as expectativas no carrinho final e imprime a taxa de acerto geral e por tipo de falha. Free tier tem limite de ~10 requisições/minuto: colocar intervalo entre chamadas e tratar erro 429 com retry.
+O `run_evals.py` roda cada caso numa sessão nova, checa as expectativas no carrinho final e imprime a taxa de acerto geral e por tipo de falha. Free tier tem limite de ~10 requisições/minuto: colocar intervalo entre chamadas e tratar erro 429 com retry. Em 12/11/2026 descobrimos que o free tier do `gemini-3.6-flash` também limita a **20 requisições por dia**; a suíte inteira (~90 requisições) não cabe nessa cota, então os evals ainda não têm resultados.
 
 ## Convenções
 - Código e nomes em português quando forem do domínio (`carrinho`, `buscar_itens`); termos técnicos podem ficar em inglês.

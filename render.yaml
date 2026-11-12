@@ -1,0 +1,19 @@
+# Blueprint do Render: descreve o serviço do back para o deploy ser reproduzível.
+services:
+  - type: web
+    name: agente-de-pedidos-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    # O Render define a porta na variável $PORT; --host 0.0.0.0 aceita conexões de fora.
+    startCommand: uvicorn app.api:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.10
+      # Valores preenchidos no painel do Render, nunca no Git.
+      - key: GEMINI_API_KEY
+        sync: false
+      # URL do front na Vercel, ex.: https://meu-front.vercel.app
+      - key: FRONT_ORIGINS
+        sync: false
